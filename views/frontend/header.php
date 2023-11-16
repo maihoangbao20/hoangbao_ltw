@@ -16,7 +16,7 @@
          <div class="row">
             <div class="col-6 col-sm-6 col-md-2 py-1">
                <a href="index.html">
-                  <img src="public/images/logo.png" class="img-fluid" alt="Logo">
+                  <img src="public/images/logoo.png" class="img-fluid" alt="logoo">
                </a>
             </div>
             <div class="col-12 col-sm-9 d-none d-md-block col-md-5 py-3">
@@ -34,7 +34,7 @@
                      <li class="nav-item">
                         <a class="nav-link" href="login.html">
                            <i class="fa fa-phone-square" aria-hidden="true"></i>
-                           0987654321
+                           0964654938
                         </a>
                      </li>
                      <li class="nav-item">
@@ -44,7 +44,7 @@
                         <a class="nav-link" href="register.html">Đăng ký</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="profile.html">Hồ Diên Lợi</a>
+                        <a class="nav-link" href="profile.html">Mai Hoang Bao</a>
                      </li>
                   </ul>
                </div>

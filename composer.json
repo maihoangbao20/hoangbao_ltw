@@ -1,10 +1,10 @@
 {
-    "name":"ledanthuan/shop-thoi-trang",
+    "name":"maihoangbao/shop-thoi-trang",
     "description":"xay dung website ban hang",
     "authors":[
         {
-            "name":"Le Dan Thuan",
-            "email":"ledanthuan2709@gmail.com"
+            "name":"Mai Hoang Bao",
+            "email":"baom64505@gmail.com"
         }
     ],
     "autoload":{

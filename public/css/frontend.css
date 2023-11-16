@@ -15,12 +15,12 @@
 .btn-main
 {
    background-color:var(--bg-main);
-   color:white;
+   color:rgb(158, 34, 34);
 }
 .btn-main:hover
 {
-   border: 1px solid #ff0099;
-   color:#ff0099;
+   border: 1px solid #1c0212;
+   color:rgb(21, 21, 24);
 }
 /*hdl-header*/
 .box-cart {
@@ -28,13 +28,13 @@
     height: 60px;
     line-height: 60px;
     text-align: center;
-    border: 1px solid #ff0099;
+    border: 1px solid #061174;
     position: relative;
  }
 
  .box-cart i {
     font-size: 26px;
-    color:#ff0099;
+    color:#1e00ff;
  }
 
  .box-cart span {
@@ -44,10 +44,10 @@
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background-color: #ff0099;
+    background-color: #bb00ff;
     line-height: 25px;
     font-size: 14px;
-    color: white;
+    color: rgb(148, 45, 45);
  }
 
  .call-login--register ul {
@@ -62,7 +62,7 @@
 
  .call-login--register ul li a {
     text-decoration: none;
-    color: black;
+    color: red;
     padding: 10px;
     font-size: 90%;
  }
@@ -70,7 +70,7 @@
 .list-category strong {
     line-height: 50px;
     display: block;
-    color: white;
+    color: rgb(112, 34, 34);
  }
 /*hdl-maincontent*/
 .product-item .product-item-image {
@@ -97,7 +97,7 @@
  }
 
  .product-item .product-item-name a {
-    color: #ff0099;
+    color: #ff00;
     text-decoration: none;
  }
 
@@ -105,17 +105,17 @@
     text-decoration: underline;
  }
  .hdl-lastpost h3.post-title a {
-    color: white;
+    color: rgb(139, 29, 29);
     transition: 0.5s;
     text-decoration: none;
  }
 
  .hdl-lastpost h3.post-title a:hover {
-    color: rgb(177, 169, 169);
+    color: rgb(116, 43, 43);
  }
  ul.list-category li a,ul.list-brand li a,ul.list-page li a
  {
-   color:#ff0099;
+   color:#5f093d;
    text-decoration: none;
    transition: 0.5s;
  }
@@ -127,11 +127,11 @@
 .hdl-footer
 {
     background-color: rgba(0,0,0,0.9);
-    color:white;
+    color:rgb(160, 39, 39);
 }
 .hdl-footer p, .hdl-footer a
 {
-    color:white;
+    color:rgb(136, 35, 35);
 }
 .hdl-footer ul.footer-menu
 {
@@ -148,7 +148,7 @@
 }
 .hdl-footer ul.footer-menu a:hover
 {
-    color:wheat;
+    color:rgb(114, 90, 45);
 }
 .hdl-footer h3.widgettilte
 {
@@ -177,7 +177,7 @@
     width: 40px;
     height: 40px;
     background-color: red;
-    color: white;
+    color: rgb(118, 43, 43);
     line-height: 40px;
     text-align: center;
     border-radius: 50%;

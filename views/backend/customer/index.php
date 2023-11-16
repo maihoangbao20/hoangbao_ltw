@@ -1,8 +1,11 @@
 <?php
-use App\Models\Category;
-$list = Category::where('status','!=',0)->OrderBy('created_at','DESC')->get();
+use App\Models\User;
+use App\Models\Customer;
+
+$list = User::where([['status','!=',0],['roles','=','0']])->orderBy('Created_at','DESC')->get();
 ?>
-<?php require_once '../views/backend/header.php';?>
+<?php require_once "../views/backend/header.php";?>
+
       <!-- CONTENT -->
       <div class="content-wrapper">
          <section class="content-header">
@@ -10,7 +13,7 @@ $list = Category::where('status','!=',0)->OrderBy('created_at','DESC')->get();
                <div class="row mb-2">
                   <div class="col-sm-12">
                      <h1 class="d-inline">Tất cả khách hàng</h1>
-                     <a href="customer_create.html" class="btn btn-sm btn-primary">Thêm khách hàng</a>
+                     <a href="index.php?option=customer&cat=create" class="btn btn-sm btn-primary">Thêm khách hàng</a>
                   </div>
                </div>
             </div>
@@ -18,8 +21,12 @@ $list = Category::where('status','!=',0)->OrderBy('created_at','DESC')->get();
          <!-- Main content -->
          <section class="content">
             <div class="card">
-               <div class="card-header">
-                  Noi dung
+               <div class="card-header p-2">
+               <div class="row">
+               <div div class="col-md-6">
+                     <a href="index.php?option=customer" class="btn btn-sm btn-primary">Tất cả</a>
+                     <a href="index.php?option=customer&cat=trash" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Thùng rác</a>
+                  </div>
                </div>
                <div class="card-body">
                   <table class="table table-bordered" id="mytable">
@@ -35,32 +42,53 @@ $list = Category::where('status','!=',0)->OrderBy('created_at','DESC')->get();
                         </tr>
                      </thead>
                      <tbody>
-                        <tr class="datarow">
-                           <td>
-                              <input type="checkbox">
-                           </td>
-                           <td>
-                              <img src="../public/images/user.jpg" alt="user.jpg">
-                           </td>
-                           <td>
-                              <div class="name">
-                                 Hồ Diên Lợi
-                              </div>
-                              <div class="function_style">
-                                 <a href="#">Hiện</a> |
-                                 <a href="#">Chỉnh sửa</a> |
-                                 <a href="customer_show.html">Chi tiết</a> |
-                                 <a href="#">Xoá</a>
-                              </div>
-                           </td>
-                           <td>0987654331</td>
-                           <td>dienloisoft@gmail.com</td>
-                        </tr>
-                     </tbody>
+                     <?php if(count($list) > 0) : ?>
+                              <?php foreach($list as $item):?>
+                              <tr class="datarow">  
+                                 <td>
+                                    <input type="checkbox">
+                                 </td>
+                                 <td>
+                                 <img class="img-fluid" src="../public/images/user/<?=$item->image;?>" alt="<?=$item->image;?>">
+                                 </td>
+                                 <td>
+                                    <div class="name">
+                                      <?= $item->name ; ?> 
+                                    </div>
+                                    <div class="function_style">
+                                       <?php if ($item->status == 1) : ?>
+                                       <a href="index.php?option=customer&cat=status&id=<?=$item->id; ?>" class="btn 
+                                       btn-success btn-xs">
+                                          <i class="fas fa-toggle-on"></i> Hiện
+                                       </a>
+                                       <?php else : ?>
+                                       <a href="index.php?option=customer&cat=status&id=<?= $item->id; ?>" class="btn 
+                                       btn-danger btn-xs">
+                                          <i class="fas fa-toggle-off"></i> Ẩn
+                                       </a>
+                                       <?php endif; ?>
+                                       <a href="index.php?option=customer&cat=edit&id=<?=$item->id; ?>" class="btn btn-primary btn-xs">
+                                       <i class="fas fa-edit"></i> Chỉnh sửa
+
+                                       </a>
+                                       <a href="index.php?option=customer&cat=show&id=<?=$item->id; ?>" class="btn btn-info btn-xs">
+                                       <i class="fas fa-eye"></i> Chi tiết
+                                       </a>
+                                       <a href="index.php?option=customer&cat=delete&id=<?=$item->id; ?>" class="btn btn-danger btn-xs">
+                                       <i class="fas fa-trash"></i> Xoá
+                                       </a>
+                                    </div>
+                                 </td>
+                                 <td><?= $item->phone?></td>
+                                 <td><?= $item->email?></td>
+                              </tr>
+                              <?php endforeach;?>
+                              <?php endif;?>
+                           </tbody>
                   </table>
                </div>
             </div>
          </section>
       </div>
       <!-- END CONTENT-->
-      <?php require_once '../views/backend/footer.php';?>
+      <?php require_once '../views/backend/footer.php'; ?>
